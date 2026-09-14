@@ -1,0 +1,9 @@
+.git
+.gitignore
+.env
+*.md
+terminals
+agent-transcripts
+.dockerignore
+Dockerfile
+docker-compose.yml

@@ -6,10 +6,11 @@ class Database
     public static function obtenerConexion(): PDO
     {
         if (self::$conexion === null) {
-            $host    = 'localhost';
-            $db      = 'control_asistencia';
-            $usuario = 'root';   
-            $clave   = '';       
+            // En Docker usa variables de entorno; en XAMPP cae a localhost/root sin clave
+            $host    = getenv('DB_HOST') ?: 'localhost';
+            $db      = getenv('DB_NAME') ?: 'control_asistencia';
+            $usuario = getenv('DB_USER') ?: 'root';
+            $clave   = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : '';
             $charset = 'utf8mb4';
 
             $dsn = "mysql:host={$host};dbname={$db};charset={$charset}";
