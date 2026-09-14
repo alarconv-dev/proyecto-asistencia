@@ -1,0 +1,15 @@
+.env
+.env.local
+.env.*
+
+# Registros y logs
+*.log
+/logs/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuraciones locales de editores de código
+.vscode/
+.idea/
